@@ -17,6 +17,12 @@ class Bot {
 
         }
         if (gamestate.rounds.length >= 2) {
+
+            if (((gamestate.rounds[gamestate.rounds.length - 1].p2) === "D") && ((gamestate.rounds[gamestate.rounds.length - 2].p2) === "D")) {
+
+                return "W"
+            }
+
             if ((gamestate.rounds[gamestate.rounds.length - 1].p1 === gamestate.rounds[gamestate.rounds.length - 1].p2) &&
                 (gamestate.rounds[gamestate.rounds.length - 2].p1 === gamestate.rounds[gamestate.rounds.length - 2].p2)) {
                 if ((player1DynamiteCount < 100)) {
