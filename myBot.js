@@ -16,12 +16,16 @@ class Bot {
             roundNumber++
 
         }
-        if (gamestate.rounds.length >= 1) {
-            console.log(gamestate.rounds[gamestate.rounds.length - 1].p1)
+        if (gamestate.rounds.length >= 2) {
+            if ((gamestate.rounds[gamestate.rounds.length - 1].p1 === gamestate.rounds[gamestate.rounds.length - 1].p2) &&
+                (gamestate.rounds[gamestate.rounds.length - 2].p1 === gamestate.rounds[gamestate.rounds.length - 2].p2)) {
+                if ((player1DynamiteCount < 100)) {
+                    return "D"
+                }
+            }
         }
-
         let randomIndex = Math.floor(3 * Math.random())
-        if ((roundNumber % 12 === 0) && (player1DynamiteCount < 100)) {
+        if (((roundNumber + 1) % 12 === 0) && (player1DynamiteCount < 100)) {
             return "D"
         }
 
