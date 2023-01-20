@@ -16,9 +16,9 @@ class Bot {
             roundNumber++
 
         }
-        if (gamestate.rounds.length >= 2) {
+        if (gamestate.rounds.length >= 3) {
 
-            if (((gamestate.rounds[gamestate.rounds.length - 1].p2) === "D") && ((gamestate.rounds[gamestate.rounds.length - 2].p2) === "D")) {
+            if (((gamestate.rounds[gamestate.rounds.length - 1].p2) === "D") && ((gamestate.rounds[gamestate.rounds.length - 2].p2) === "D") && ((gamestate.rounds[gamestate.rounds.length - 3].p2) === "D")) {
 
                 return "W"
             }
